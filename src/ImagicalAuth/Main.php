@@ -121,6 +121,13 @@
 
     }
 
+    public function logOut($username)
+    {
+
+      // MySQL Stuff here...
+
+    }
+
   }
 
 ?>
