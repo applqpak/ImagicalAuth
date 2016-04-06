@@ -107,6 +107,13 @@
 
     }
 
+    public function isRegistered($username)
+    {
+
+      // MySQL Stuff here...
+
+    }
+
   }
 
 ?>
