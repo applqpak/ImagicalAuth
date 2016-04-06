@@ -1,0 +1,22 @@
+name: ImagicalAuth
+version: 1.0.0
+author: ImagicalCorp
+api:
+- 1.0.0
+- 2.0.0
+main: ImagicalAuth\Main
+commands:
+  login:
+    description: Log into an account.
+    usage: "/login <password>"
+    permission: imagicalauth.command.login
+    aliases: [l]
+  register:
+    description: Registers an account.
+    usage: "/register <email> <password>"
+    permission: imagicalauth.command.register
+permissions:
+  imagicalauth.command.login:
+    default: op
+  imagicalauth.command.register:
+    default: op
