@@ -52,7 +52,7 @@
 
       @mkdir($this->dataPath());
 
-      $this->cfg = new Config($this->dataPath() . "config.yml". Config::YAML, array());
+      $this->cfg = new Config($this->dataPath() . "config.yml". Config::YAML, array("stay_logged_in" => "on"));
 
       $this->server()->pluginManager()->registerEvents(new EventListener($this), $this);
 
