@@ -114,6 +114,13 @@
 
     }
 
+    public function isLoggedIn($username)
+    {
+
+      // MySQL Stuff here...
+
+    }
+
   }
 
 ?>
