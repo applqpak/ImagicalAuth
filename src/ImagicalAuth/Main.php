@@ -42,6 +42,46 @@
 
     }
 
+    public function hashPassword($password)
+    {
+
+      $hashedPassword = md5(sha1(md5(sha1($password))));
+
+      if($hashedPassword)
+      {
+
+        return $hashedPassword;
+
+      }
+      else
+      {
+
+        return false;
+
+      }
+
+    }
+
+    public function verifyPasswordHash($hash, $password)
+    {
+
+      $hashedPassword = md5(sha1(md5(sha1($password))));
+
+      if($hashedPassword === $hash)
+      {
+
+        return true;
+
+      }
+      else
+      {
+
+        return false;
+
+      }
+
+    }
+
   }
 
 ?>
