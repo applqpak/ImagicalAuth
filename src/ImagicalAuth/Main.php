@@ -10,6 +10,8 @@
   class Main extends PluginBase
   {
 
+    const PREFIX = TF::RED . "[" . TF::LIGHT_PURPLE . "ImagicalAuth" . TF::RED . "] ";
+
     public function dataPath()
     {
 
@@ -31,6 +33,20 @@
 
     }
 
+    public function logger()
+    {
+
+      return $this->server()->getLogger();
+
+    }
+
+    public function onLoad()
+    {
+
+      $this->server()->logger()->info(PREFIX . "Loaded!");
+
+    }
+
     public function onEnable()
     {
 
@@ -39,6 +55,15 @@
       $this->cfg = new Config($this->dataPath() . "config.yml". Config::YAML, array());
 
       $this->server()->pluginManager()->registerEvents(new EventListener($this), $this);
+
+      $this->server()->logger()->info(PREFIX . "Enabled!");
+
+    }
+
+    public function onDisable()
+    {
+
+      $this->server()->logger()->info(PREFIX . "Disabled!");
 
     }
 
