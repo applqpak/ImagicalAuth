@@ -24,6 +24,24 @@
 
     }
 
+    public function pluginManager()
+    {
+
+      return $this->server()->getPluginManager();
+
+    }
+
+    public function onEnable()
+    {
+
+      @mkdir($this->dataPath());
+
+      $this->cfg = new Config($this->dataPath() . "config.yml". Config::YAML, array());
+
+      $this->server()->pluginManager()->registerEvents(new EventListener($this), $this);
+
+    }
+
   }
 
 ?>
